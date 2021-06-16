@@ -12,17 +12,18 @@
     <script src="https://kit.fontawesome.com/42106171a5.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="main.css">
     <script type="text/javascript" src="Stars.js"></script>
-    <title></title>
+    <title>Puntuacion</title>
   </head>
-  <body>
-      <ul class="text-center">
-          <li class="star"><i class="fas fa-star"></i></li>
-          <li class="star"><i class="fas fa-star"></i></li>
-          <li class="star"><i class="fas fa-star"></i></li>
-          <li class="star"><i class="fas fa-star"></i></li>
-          <li class="star"><i class="fas fa-star"></i></li>
-      </ul>
-    <div class="rating text-center">Rated</div>
+  <body onclick="bodyClick(event)">
+    <div class="align-items-center" style="height: 100vh; display:flex; justify-content: center;">
+      <div style="font-size: 100px; color: silver;">
+          <span class="fas fa-star" onclick="calificar(this)" id="1estrella" onmouseover="changeColor(this)"></span>
+          <span class="fas fa-star" onclick="calificar(this)" id="2estrella" onmouseover="changeColor(this)"></span>
+          <span class="fas fa-star" onclick="calificar(this)" id="3estrella" onmouseover="changeColor(this)"></span>
+          <span class="fas fa-star" onclick="calificar(this)" id="4estrella" onmouseover="changeColor(this)"></span>
+          <span class="fas fa-star" onclick="calificar(this)" id="5estrella" onmouseover="changeColor(this)"></span>
+      </div>
+    </div>
       
 
 

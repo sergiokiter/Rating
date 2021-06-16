@@ -1,52 +1,38 @@
-alert("hello world")
+var contador;
 function calificar(item){
-    console.log(item);
-}
-var stars = document.querySelectorAll(".star");
-var rating =document.querySelector(".rating");
+  console.log(item);
+  contador=item.id[0];
+  let nombre = item.id.substring(1);
 
-for(let i = 0; i < stars.length; i++) {
-    stars[i].starValue = ( i + 1);
-    ["mouseover","mouseout", "click"].forEach(function (e){
-            stars[i].addEventListener(e, starRate);
-    })
-}
+  for(let i=0; i<5; i++){
+    if(i<contador){
+      document.getElementById((i+1)+nombre).style.color="orange";
+    }else{ document.getElementById((i+1)+nombre).style.color="silver";
 
-function starRate(e){
-    let type = e.type;
-    let starValue = this.starValue;
-    if(type ==="click"){
-        if (starValue > 1){
-            rating.innerHTML = "Has votado esto" + starValue + "stars";
-        }
     }
-    stars.forEach( function(ele, ind){
-        if(type === "click"){
-            ele.classList.add("fix");
-        }
-        else{
-            ele.classList.remove("fix");
-            }
-        
-        
-        if(type === "mouseover"){
-            if(ind < starValue){
-            ele.classList.add("over");
-        }
-            else{
-                ele.classList.remove("over");
-            }
-        }
-        if (type ==="mouseout"){
-            ele.classList.remove("over");
-        }
-        
-    })
+  }
 }
-    
-        
- 
+function changeColor(item){
+  console.log(item);
+  contador=item.id[0];
+  let nombre = item.id.substring(1);
 
-    
+  for(let i=0; i<5; i++){
+    if(i<contador){
+      document.getElementById((i+1)+nombre).style.color = 'red';
+    }else{ document.getElementById((i+1)+nombre).style.color= 'silver';
+    }  
+  } 
+}
 
-   
+function bodyClick(event) {
+let elementoClick = event.srcElement;
+let clasesElemento = elementoClick.classList.value;
+
+if (!clasesElemento.includes('fa-star')) {
+  let stars = document.querySelectorAll('.fa-star');
+  stars.forEach(star => {
+    star.style.removeProperty('color');
+  });
+}
+}
